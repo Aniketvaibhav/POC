@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 
 // Endpoint to handle audio transcription
 app.post('/transcribe', (req, res) => {
-  const audioFile = path.resolve(__dirname, req.query.file || 'test.m4a');
+  const audioFile = path.resolve(__dirname, req.query.file || 'test_audio.wav');
 
   const pythonProcess = execFile('python', [
     path.join(__dirname, 'transcribe.py'), 
